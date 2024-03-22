@@ -1,0 +1,2728 @@
+@font-face {
+  font-family: 'Helvetica-Black';
+  src: url('./Assets/ArchivoBlack-Regular.ttf');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Archivo-Black';
+  src: url(./Assets/ArchivoBlack-Regular.ttf);
+}
+/*VARIABLES*/
+:root {
+  /*COLORES*/
+  --fz-color-primary: #fdcf00;
+  --fc-color-secondary: #000000;
+  --fc-color-third: #ffffff;
+  --fc-color-selector: rgb(102, 80, 47);
+  --fc-color-intro: #ffcc00;
+
+  /*TAMAÑOS*/
+  --fc-height-booking: 35px;
+  --fc-padding-booking: 3px 5px;
+  --fc-size-booking: 80%;
+  --fc-border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+li,
+a {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/*MENU*/
+
+header {
+  font-family: 'Helvetica-Black';
+}
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  max-width: 100svw;
+  background-color: var(--fz-color-primary);
+}
+/*ICONO*/
+
+#menu a > img {
+  width: 80%;
+}
+#menu > a {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  margin-left: 3px;
+}
+/*SELECTOR*/
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.options li {
+  margin-left: 1%;
+  position: relative;
+}
+.options a {
+  text-decoration: none;
+  color: var(--fc-color-secondary);
+  -webkit-text-stroke: 0.3px var(--fc-color-third);
+  position: relative;
+  transition: color 0.5s;
+}
+.options a:hover {
+  color: var(--fc-color-selector);
+  -webkit-text-stroke: var(--fc-color-selector);
+}
+.options a:before,
+.options a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: var(--fc-color-third);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.options a:before {
+  top: -10px;
+}
+.options a:after {
+  bottom: -10px;
+}
+.options a:hover:before,
+.options a:hover:after {
+  transform: scaleX(1);
+}
+
+/*OPCIONES*/
+.selection {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 90%;
+}
+.simbolo img {
+  display: none;
+}
+.options {
+  display: flex;
+  justify-content: flex-start;
+  margin-right: 5%;
+}
+.options li {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*PEDIDOS Y RESERVAS*/
+.purchase {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+}
+.order {
+  background-color: var(--fc-color-third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+.order > img {
+  width: 20%;
+  height: 20%;
+  position: relative;
+  left: 15px;
+}
+.order > a {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+}
+.site {
+  background-color: var(--fc-color-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 120px;
+  gap: 10px;
+}
+.site > img {
+  width: 10%;
+  height: 15%;
+  filter: grayscale(100%) brightness(200%) saturate(0%);
+}
+.order a {
+  color: var(--fz-color-primary);
+}
+.site a {
+  color: var(--fc-color-third);
+}
+.purchase a:hover {
+  color: var(--fc-color-selector);
+}
+
+/*DESPLEGUE MENU RESERVA */
+.direction {
+  display: block;
+  background-color: var(--fc-color-secondary);
+  position: absolute;
+  top: 120px;
+  left: 0;
+  right: 0;
+  height: 75px;
+  max-width: 100svw;
+}
+.booking:hover > .direction {
+  display: block;
+}
+.place {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5%;
+}
+/*DESPLIEGUE OTRO MENU*/
+.simbolo > img {
+  display: none;
+}
+
+/*DECORACION MENU DESPLEGUE*/
+.input {
+  font-family: 'Archivo-Black';
+  font-size: var(--fc-size-booking);
+  padding: var(--fc-padding-booking);
+  width: 15%;
+  padding-right: 0px;
+  height: var(--fc-height-booking);
+  outline: none;
+  background: var(--fc-color-third);
+  border: 2px var(--fc-color-secondary);
+  border-radius: var(--fc-border-radius);
+}
+.input::placeholder {
+  color: #888888;
+}
+.place > img {
+  width: 1%;
+  position: absolute;
+  display: inline-block;
+  margin-right: 47%;
+}
+.search {
+  font-family: 'Archivo-Black';
+  font-size: var(--fc-size-booking);
+  padding: var(--fc-padding-booking);
+  width: 12%;
+  padding-right: 0px;
+  height: var(--fc-height-booking);
+  outline: none;
+  color: var(--fc-color-third);
+  background-color: var(--fc-color-secondary);
+  border-radius: var(--fc-border-radius);
+  border-color: var(--fz-color-primary);
+}
+/*
+
+
+
+MAIN
+
+
+
+*/
+
+#intro > img:nth-child(1) {
+  position: relative;
+  top: 75px;
+  width: 100%;
+  height: 50px;
+  filter: brightness(98%) hue-rotate(-3deg);
+}
+#intro > img:last-child {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  filter: brightness(98%) hue-rotate(-3deg);
+}
+/*BASE*/
+.principal {
+  background-color: var(--fc-color-intro);
+  top: 80px;
+  height: 550px;
+}
+.principal h2 {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 17.5%;
+  font-family: 'Archivo-Black';
+  font-size: 400%;
+}
+.principal button {
+  position: absolute;
+  margin-top: 400px;
+  margin-left: 17.5%;
+  width: 10%;
+  height: 30px;
+  font-family: 'Archivo-Black';
+  color: var(--fz-color-primary);
+  background-color: var(--fc-color-secondary);
+  padding: 5px;
+  border-radius: 10px;
+  border-style: dashed;
+}
+/*IMAGENES INTRO*/
+.special {
+  position: absolute;
+  top: 260px;
+  height: 450px;
+  left: 62%;
+}
+.special > img {
+  position: relative;
+  width: 100%;
+  height: 110%;
+  bottom: 40px;
+  overflow: hidden;
+  filter: contrast(95%);
+}
+
+/*CARTA*/
+.meal {
+  height: 300px;
+  background-color: var(--fc-color-third);
+}
+.meal > h3 {
+  background-color: var(--fc-color-secondary);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  top: -5px;
+  height: 150px;
+  font-family: 'Archivo-Black';
+}
+/*OPCIONES MENU*/
+.elections {
+  display: grid;
+  grid-template-columns: repeat(8, 9%);
+  justify-content: center;
+  justify-items: center;
+  margin-top: 50px;
+  align-items: center;
+  height: 30px;
+}
+.elections li > a {
+  color: var(--fc-color-secondary);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 550;
+}
+/* SELECCION CARTA */
+.elections li {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.elections li:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background-color: var(--fc-color-intro);
+  transform: scaleX(0);
+}
+
+.elections li:hover:before,
+.elections li:focus:before {
+  transform: scaleX(1);
+}
+
+/*ENTRANTES*/
+
+.entries {
+  height: 300px;
+}
+.entries > h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 30px;
+  color: var(--fc-color-intro);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 200%;
+}
+.entries p {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 100px;
+  width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 520;
+}
+
+/*PLATOS*/
+#plates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-items: center;
+  position: relative;
+  margin: 80px;
+  gap: 20px;
+}
+.variety {
+  /* border: 4px outset var(--fc-color-secondary); */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 300px;
+  margin-top: 50px;
+  background-color: #e9e9e9;
+  box-shadow: 10px 17px 33px 3px rgba(0, 0, 0, 0.52);
+}
+.variety > img {
+  width: 400px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.variety h5 > img {
+  width: 10px;
+}
+.variety h5 {
+  color: #941f1f;
+  font-family: 'Helvetica-Black';
+  font-weight: 800;
+  margin-top: 4px;
+}
+.variety > a {
+  font-family: 'Archivo-Black';
+  font-size: 180%;
+  margin-top: 45px;
+  color: var(--fc-color-intro);
+  text-shadow: 5px 2px 5px rgba(0, 0, 0, 0.59);
+}
+.variety > a span {
+  color: rgb(0, 0, 0);
+}
+/*BOTON MAS*/
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin-top: 200px;
+}
+.more > button {
+  width: 15%;
+  height: 10px;
+  padding: 20px;
+  background-color: var(--fz-color-primary);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 100%;
+  border: 2px solid var(--fz-color-primary);
+}
+
+/*
+
+
+EXTRA
+
+
+*/
+
+/*MAS*/
+.extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.extra > h6 {
+  position: relative;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 80%;
+  top: 105px;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  background-color: var(--fz-color-primary);
+}
+.extra > ul {
+  background-color: var(--fc-color-secondary);
+  border-radius: 4px;
+  position: relative;
+  top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 30%;
+}
+.moreoptions > li a {
+  color: var(--fz-color-primary);
+  position: relative;
+  margin: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 100%;
+}
+
+/*DESCARGAR APP*/
+.app {
+  position: relative;
+  top: 200px;
+  display: flex;
+  justify-content: center;
+}
+.app > img {
+  width: 40%;
+  height: 500px;
+}
+
+/*
+
+FOOTER 
+
+*/
+
+/*REDES SOCIALES*/
+
+.follow {
+  top: 2000px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pdf {
+  background-color: #fdcf00da;
+  width: 50%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pdf > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fc-color-secondary);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 100%;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: rgb(214, 214, 214);
+}
+.rrss {
+  background-color: var(--fc-color-secondary);
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rrss > p {
+  color: var(--fz-color-primary);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 100%;
+  display: flex;
+  justify-content: start;
+}
+.rrss > img {
+  width: 2%;
+  margin-left: 1%;
+  position: relative;
+  left: 3%;
+  cursor: pointer;
+}
+
+/*RESTAURANTES*/
+.localitations {
+  background-color: var(--fz-color-primary);
+  position: relative;
+  top: 2000px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.localitations > h3 {
+  color: var(--fc-color-third);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  font-family: 'Helvetica-Black';
+  font-weight: 600;
+  gap: 3px;
+}
+.localitations > h3 span {
+  font-family: 'Helvetica-Black';
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 1000;
+}
+.cities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-content: stretch;
+  align-items: center;
+  position: relative;
+  height: 300px;
+  padding: 1%;
+  width: 50%;
+  font-size: 130%;
+}
+.cities > ul a {
+  color: #ececec;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 100%;
+}
+
+/*TERMINOS Y CONDICIONES */
+
+.terms {
+  background-color: var(--fc-color-secondary);
+  position: relative;
+  top: 2000px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.terms > img {
+  width: 8%;
+}
+.conditions {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  gap: 3%;
+  font-size: 100%;
+}
+.conditions li > a {
+  color: var(--fz-color-primary);
+  font-family: 'Archivo-Black';
+  font-size: 70%;
+}
+/*MEDIAS QUERIES*/
+
+@media (max-width: 1700px) and (min-width: 1600px) {
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 2600px;
+  }
+  .terms > img {
+    width: 8%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 100%;
+  }
+  .conditions li > a {
+    font-size: 70%;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 2600px;
+    height: 500px;
+  }
+  .localitations > h3 {
+    gap: 3px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 50%;
+    font-size: 130%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 100%;
+  }
+
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 2%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 2600px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 40%;
+    height: 40%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 7%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 40%;
+  }
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 85%;
+  }
+}
+@media (max-width: 1599px) and (min-width: 1326px) {
+  /*RESTAURANTES*/
+  .localitations {
+    top: 2600px;
+    height: 500px;
+  }
+  .localitations > h3 {
+    gap: 3px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 50%;
+    font-size: 130%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 2600px;
+  }
+  .terms > img {
+    width: 8%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 80%;
+  }
+  .conditions li > a {
+    font-size: 70%;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 2%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 2600px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 40%;
+    height: 40%;
+  }
+
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 7%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 40%;
+  }
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 85%;
+  }
+
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 10%;
+  }
+  .principal button {
+    margin-left: 10%;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    position: absolute;
+    left: 750px;
+    max-width: 50%;
+  }
+}
+@media (max-width: 1325px) and (min-width: 1050px) {
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 2%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 2000px;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 2000px;
+    height: 500px;
+  }
+  .localitations > h3 {
+    gap: 3px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 50%;
+    font-size: 110%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 2000px;
+  }
+  .terms > img {
+    width: 8%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 70%;
+  }
+  .conditions li > a {
+    font-size: 70%;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 50%;
+    height: 50%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 7%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 50%;
+  }
+
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 75%;
+  }
+
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 100px;
+    gap: 50px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    display: grid;
+    grid-template-columns: repeat(8, 11%);
+    justify-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    align-items: center;
+    height: 30px;
+  }
+  .elections li {
+    font-size: 90%;
+    font-weight: 1000;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 10%;
+    font-size: 250%;
+    margin-top: 200px;
+  }
+  .principal button {
+    margin-left: 10%;
+    margin-top: 350px;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    position: absolute;
+    left: 520px;
+    min-width: 50%;
+  }
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .site {
+    width: 150px;
+    position: relative;
+    right: 20%;
+    gap: 10px;
+  }
+  .site > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 80%;
+  }
+  .site > img {
+    width: 10%;
+    height: 15%;
+    filter: grayscale(100%) brightness(200%) saturate(0%);
+    position: relative;
+    left: 12px;
+  }
+  .order {
+    width: 150px;
+    position: relative;
+    right: 10%;
+    gap: 10px;
+  }
+  .order > img {
+    width: 15%;
+    height: 15%;
+    position: relative;
+    left: 15px;
+  }
+  .order > a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 80%;
+  }
+
+  /*OPCIONES*/
+  .options {
+    font-size: 70%;
+    position: relative;
+    right: 3%;
+  }
+  .options li {
+    width: 100px;
+  }
+  /*LOGO*/
+  #menu a > img {
+    width: 80%;
+  }
+}
+@media (max-width: 1049px) and (min-width: 900px) {
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 1800px;
+  }
+  .terms > img {
+    width: 10%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 60%;
+  }
+  .conditions li > a {
+    font-size: 70%;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 3%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 1800px;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 1800px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 30px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 70%;
+    font-size: 120%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 100%;
+    gap: 30px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 50%;
+    height: 50%;
+  }
+
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 9%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 50%;
+  }
+
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 75%;
+  }
+
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 50px;
+    gap: 30px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    display: grid;
+    grid-template-columns: repeat(8, 11%);
+    justify-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    align-items: center;
+    height: 30px;
+  }
+  .elections li {
+    font-size: 90%;
+    font-weight: bold;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 5%;
+    font-size: 200%;
+    margin-top: 200px;
+  }
+  .principal button {
+    margin-left: 5%;
+    margin-top: 320px;
+    width: 20%;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    position: absolute;
+    left: 450px;
+    width: 55%;
+    height: 400px;
+    top: 275px;
+  }
+
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    right: 0px;
+    height: 30px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 3px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    right: 20px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 105%;
+  }
+  /*OPCIONES*/
+  .options {
+    font-size: 70%;
+    position: relative;
+    right: 3%;
+  }
+  .options li {
+    width: 100px;
+  }
+  /*LOGO*/
+  #menu a > img {
+    width: 70%;
+  }
+}
+@media (max-width: 899px) and (min-width: 740px) {
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 1650px;
+  }
+  .terms > img {
+    width: 10%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 60%;
+  }
+  .conditions li > a {
+    font-size: 60%;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 4%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 1650px;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 1650px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 30px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 70%;
+    font-size: 120%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 80%;
+    gap: 30px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 50%;
+    height: 50%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 12%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 50%;
+  }
+
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 50%;
+  }
+
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 30px;
+    gap: 20px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    min-height: 54px;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .elections li {
+    font-size: 90%;
+    font-weight: bold;
+  }
+  /*CARTA*/
+  .meal > h3 {
+    position: relative;
+    top: -8px;
+  }
+  /*INTRO*/
+  .principal {
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+  }
+  #intro > img:nth-child(1) {
+    position: relative;
+    top: 0px;
+  }
+  #intro > img:last-child {
+    position: relative;
+    top: -4px;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 5%;
+    font-size: 400%;
+    margin-top: 50px;
+  }
+  .principal button {
+    margin-left: 0;
+    margin-top: 270px;
+    width: 25%;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    display: block;
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    height: 180px;
+    top: 375px;
+  }
+
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 50px;
+    height: 35px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 35px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 30px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 85%;
+  }
+  /*OPCIONES*/
+  .options {
+    background-color: var(--fz-color-primary);
+    top: 120px;
+    width: 100%;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 4;
+  }
+  .options li {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+    top: 10%;
+    height: 60px;
+  }
+  /*DESPLIEGUE MENU OPCIONES*/
+  .simbolo > img {
+    display: block;
+    width: 40px;
+    position: relative;
+    top: 40px;
+    right: 300%;
+  }
+  .links > .simbolo {
+    position: absolute;
+    right: 75%;
+  }
+  /*LOGO*/
+  #menu a > img {
+    min-width: 250%;
+    max-width: 250%;
+  }
+  #menu > a {
+    position: relative;
+    margin-left: 45%;
+  }
+  /*DESPLEGUE MENU RESERVA */
+  .direction {
+    display: none;
+    background-color: var(--fc-color-secondary);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 75px;
+    width: 100svw;
+  }
+  .booking:hover > .direction {
+    display: block;
+  }
+  .place {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5%;
+  }
+  /*SELECTOR DESPLEGUE*/
+  .simbolo:hover ~ .options {
+    display: block;
+  }
+  /*BOTONES*/
+  .search {
+    width: 15%;
+  }
+  .place > img {
+    width: 1.2%;
+    position: absolute;
+    display: inline-block;
+    margin-right: 51%;
+  }
+}
+@media (max-width: 739px) and (min-width: 500px) {
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 1950px;
+  }
+  .terms > img {
+    width: 9%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 30%;
+  }
+  .conditions li > a {
+    font-size: 1%;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 100%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 100%;
+  }
+  .rrss > img {
+    width: 6%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 1950px;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 1950px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 30px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 80%;
+    font-size: 120%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 60%;
+    gap: 30px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 80%;
+    height: 0%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 20%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 80%;
+  }
+
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 60%;
+  }
+
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0px;
+    gap: 20px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+
+  /*ENTRANTES*/
+  .entries p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    width: 100%;
+    font-size: 87%;
+    font-weight: 600;
+  }
+  .entries b {
+    display: none;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    min-height: 54px;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .elections li {
+    font-size: 80%;
+    font-weight: bold;
+  }
+  /*CARTA*/
+  .meal > h3 {
+    position: relative;
+    top: -8px;
+  }
+  /*INTRO*/
+  .principal {
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+  }
+  #intro > img:nth-child(1) {
+    position: relative;
+    top: 0px;
+  }
+  #intro > img:last-child {
+    position: relative;
+    top: -4px;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 1%;
+    font-size: 200%;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .principal button {
+    margin-left: 0;
+    margin-top: 430px;
+    width: 25%;
+    z-index: 1;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    display: block;
+    position: absolute;
+    left: 15%;
+    max-width: 70%;
+    height: 320px;
+    top: 120px;
+    filter: opacity(90%);
+  }
+
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 40px;
+    height: 25px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 30px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 120%;
+  }
+  /*OPCIONES*/
+  .options {
+    background-color: var(--fz-color-primary);
+    top: 120px;
+    width: 100%;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 4;
+  }
+  .options li {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+    top: 10%;
+    height: 60px;
+  }
+  /*DESPLIEGUE MENU OPCIONES*/
+  .simbolo > img {
+    display: block;
+    width: 30px;
+    position: relative;
+    top: 45px;
+    right: 255%;
+  }
+  .links > .simbolo {
+    position: absolute;
+    right: 75%;
+  }
+  /*LOGO*/
+  #menu a > img {
+    min-width: 200%;
+    max-width: 200%;
+  }
+  #menu > a {
+    position: relative;
+    margin-left: 45%;
+  }
+  /*DESPLEGUE MENU RESERVA */
+  .direction {
+    display: none;
+    background-color: var(--fc-color-secondary);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 75px;
+    width: 100svw;
+  }
+  .booking:hover > .direction {
+    display: block;
+  }
+  .place {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5%;
+  }
+  /*SELECTOR DESPLEGUE*/
+  .simbolo:hover ~ .options {
+    display: block;
+  }
+  /*BOTONES*/
+  .search {
+    width: 15%;
+  }
+  .place > img {
+    width: 1.2%;
+    position: absolute;
+    display: inline-block;
+    margin-right: 51%;
+  }
+}
+@media (max-width: 499px) and (min-width: 380px) {
+  .more > button {
+    width: 30%;
+  }
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 2950px;
+  }
+  .terms > img {
+    width: 9%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 20%;
+  }
+  .conditions li > a {
+    font-size: 1%;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 2950px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 30px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 80%;
+    font-size: 160%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 40%;
+    gap: 30px;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 80%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 90%;
+  }
+  .rrss > img {
+    width: 6%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 2950px;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 80%;
+    height: 50%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 22%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 80%;
+  }
+
+  .moreoptions > li a {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    font-weight: 800;
+    font-size: 2%;
+  }
+
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 10px;
+    gap: 5px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+  /*ENTRANTES*/
+  .entries > h3 {
+    font-size: 160%;
+  }
+  /*ENTRANTES*/
+  .entries p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
+    font-size: 80%;
+    font-weight: 600;
+  }
+  .entries b {
+    display: none;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    min-height: 54px;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .elections li {
+    font-size: 80%;
+    font-weight: bold;
+  }
+
+  /*CARTA*/
+
+  .meal > h3 {
+    position: relative;
+    top: -8px;
+  }
+  /*INTRO*/
+  .principal {
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+  }
+  #intro > img:nth-child(1) {
+    position: relative;
+    top: 0px;
+  }
+  #intro > img:last-child {
+    position: relative;
+    top: -4px;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 1%;
+    font-size: 170%;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .principal button {
+    margin-left: 0;
+    margin-top: 430px;
+    width: 35%;
+    z-index: 1;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    display: block;
+    position: absolute;
+    left: 0%;
+    max-width: 100%;
+    height: 320px;
+    top: 110px;
+    filter: opacity(90%);
+  }
+
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 22px;
+    height: 20px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 2px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 15px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 150%;
+  }
+  /*OPCIONES*/
+  .options {
+    background-color: var(--fz-color-primary);
+    top: 120px;
+    width: 100%;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 2;
+  }
+  .options li {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+    top: 10%;
+    height: 60px;
+  }
+  /*DESPLIEGUE MENU OPCIONES*/
+  .simbolo > img {
+    display: block;
+    width: 25px;
+    position: relative;
+    top: 48px;
+    right: 240%;
+  }
+  .links > .simbolo {
+    position: absolute;
+    right: 75%;
+  }
+  /*LOGO*/
+  #menu a > img {
+    min-width: 280%;
+    min-height: 103%;
+  }
+  #menu > a {
+    position: relative;
+    margin-left: 42%;
+  }
+  /*DESPLEGUE MENU RESERVA */
+  .direction {
+    display: none;
+    background-color: var(--fc-color-secondary);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    width: 100svw;
+  }
+  .booking:hover > .direction {
+    display: block;
+  }
+  .place {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+  }
+  .input,
+  .search {
+    width: 200px;
+  }
+
+  /*SELECTOR DESPLEGUE*/
+  .simbolo:hover ~ .options {
+    display: block;
+  }
+  /*BOTONES*/
+  .place > img {
+    width: 3%;
+    position: absolute;
+    display: inline-block;
+    margin-left: 91%;
+    margin-bottom: 190px;
+  }
+}
+@media (max-width: 379px) and (min-width: 215px) {
+  .more > button {
+    width: 35%;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 80%;
+    height: 50%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 35%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 80%;
+  }
+
+  .moreoptions > li a {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-weight: 800;
+    font-size: 10%;
+  }
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 3050px;
+  }
+  .terms > img {
+    width: 9%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 6%;
+  }
+  .conditions li > a {
+    font-size: 1%;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 3050px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 10px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 80%;
+    font-size: 100%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 20%;
+    gap: 30px;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 50%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 50%;
+  }
+  .rrss > img {
+    width: 8%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 3050px;
+  }
+  /*PLATOS*/
+  #plates {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 10px;
+    gap: 5px;
+  }
+  .variety {
+    height: 300px;
+    width: 200px;
+  }
+  .variety > img {
+    width: 200px;
+  }
+  .variety h5 > img {
+    width: 10px;
+  }
+  .variety > a {
+    font-size: 120%;
+  }
+  /*ENTRANTES*/
+  .entries > h3 {
+    font-size: 160%;
+  }
+  /*ENTRANTES*/
+  .entries > h3 {
+    font-size: 150%;
+  }
+  /*ENTRANTES*/
+  .entries p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
+    font-size: 70%;
+    font-weight: 600;
+  }
+  .entries b {
+    display: none;
+  }
+  /*ENTRANTES*/
+  .entries > h3 {
+    font-size: 100%;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    min-height: 54px;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .elections li {
+    font-size: 55%;
+    font-weight: bold;
+  }
+  /*CARTA*/
+  .meal > h3 {
+    position: relative;
+    top: -8px;
+  }
+  /*INTRO*/
+  .principal {
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+  }
+  #intro > img:nth-child(1) {
+    position: relative;
+    top: 0px;
+    height: 25px;
+  }
+  #intro > img:last-child {
+    position: relative;
+    top: -4px;
+    height: 25px;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 1%;
+    font-size: 140%;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .principal button {
+    margin-left: 0;
+    margin-top: 430px;
+    width: 50%;
+    z-index: 1;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    display: block;
+    position: absolute;
+    left: 0%;
+    max-width: 100%;
+    height: 270px;
+    top: 130px;
+    filter: opacity(90%);
+  }
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 10px;
+    height: 12px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 1px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    right: 0px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 240%;
+  }
+  /*OPCIONES*/
+  .options {
+    background-color: var(--fz-color-primary);
+    top: 120px;
+    width: 100%;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 2;
+  }
+  .options li {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+    top: 10%;
+    height: 60px;
+  }
+  /*DESPLIEGUE MENU OPCIONES*/
+  .simbolo > img {
+    display: block;
+    width: 15px;
+    position: relative;
+    top: 54px;
+    right: 200%;
+  }
+  .links > .simbolo {
+    position: absolute;
+    right: 75%;
+  }
+  /*LOGO*/
+  #menu a > img {
+    min-width: 280%;
+    min-height: 103%;
+  }
+  #menu > a {
+    position: relative;
+    margin-left: 42%;
+  }
+  /*DESPLEGUE MENU RESERVA */
+  .direction {
+    display: none;
+    background-color: var(--fc-color-secondary);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    width: 100svw;
+  }
+  .booking:hover > .direction {
+    display: block;
+  }
+  .place {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+  }
+  .input,
+  .search {
+    width: 200px;
+  }
+
+  /*SELECTOR DESPLEGUE*/
+  .simbolo:hover ~ .options {
+    display: block;
+  }
+  /*BOTONES*/
+  .place > img {
+    width: 3%;
+    position: absolute;
+    display: none;
+    margin-left: 100%;
+    margin-bottom: 190px;
+  }
+}
+@media (max-width: 214px) and (min-width: 150px) {
+  .more > button {
+    width: 30%;
+  }
+  /*DESCARGAR APP*/
+
+  .app > img {
+    width: 80%;
+    height: 50%;
+  }
+  /*MAS*/
+
+  .extra > h6 {
+    font-size: 80%;
+    width: 39%;
+  }
+  .extra > ul {
+    height: 50px;
+    width: 90%;
+  }
+
+  .moreoptions > li a {
+    margin: 30px;
+    font-weight: 800;
+    font-size: 1px;
+  }
+  /*TERMINOS Y CONDICIONES */
+
+  .terms {
+    top: 3050px;
+  }
+  .terms > img {
+    width: 9%;
+  }
+  .conditions {
+    width: 60%;
+    gap: 3%;
+    font-size: 6%;
+  }
+  .conditions li > a {
+    font-size: 1%;
+  }
+  /*RESTAURANTES*/
+  .localitations {
+    top: 3050px;
+    height: 500px;
+    width: 100%;
+    right: 0;
+  }
+  .localitations > h3 {
+    gap: 10px;
+  }
+
+  .cities {
+    height: 300px;
+    padding: 1%;
+    width: 80%;
+    font-size: 100%;
+  }
+  .cities > ul a {
+    font-weight: 800;
+    font-size: 20%;
+    gap: 30px;
+  }
+  /*REDES SOCIALES*/
+  .pdf {
+    width: 50%;
+    height: 50px;
+  }
+  .pdf > a {
+    font-size: 50%;
+  }
+  .rrss {
+    width: 50%;
+    height: 50px;
+  }
+  .rrss > p {
+    font-weight: 800;
+    font-size: 50%;
+  }
+  .rrss > img {
+    width: 8%;
+    margin-left: 1%;
+    left: 3%;
+  }
+  .follow {
+    top: 3050px;
+  }
+  /*ENTRANTES*/
+  .entries p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 90%;
+    font-size: 80%;
+    font-weight: 600;
+  }
+  .entries b {
+    display: none;
+  }
+  /*ENTRANTES*/
+  .entries > h3 {
+    font-size: 100%;
+  }
+
+  /*OPCIONES MENU*/
+  .elections {
+    min-height: 54px;
+    min-width: 100%;
+    display: flex !important;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .elections li {
+    font-size: 40%;
+    font-weight: bold;
+  }
+  /*CARTA*/
+  .meal > h3 {
+    position: relative;
+    top: -8px;
+  }
+  /*INTRO*/
+  .principal {
+    position: relative;
+    top: -4px;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+  }
+  #intro > img:nth-child(1) {
+    position: relative;
+    top: 0px;
+    height: 15px;
+  }
+  #intro > img:last-child {
+    position: relative;
+    top: -4px;
+    height: 15px;
+  }
+  /*INTRO*/
+  .principal h2 {
+    margin-left: 1%;
+    font-size: 120%;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .principal button {
+    margin-left: 0;
+    margin-top: 430px;
+    width: 60%;
+    z-index: 1;
+  }
+  /*IMAGENES INTRO*/
+  .special {
+    display: block;
+    position: absolute;
+    left: 0%;
+    max-width: 100%;
+    height: 270px;
+    top: 125px;
+    filter: opacity(90%);
+  }
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .purchase {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .site > a {
+    display: none;
+  }
+  .site {
+    width: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    left: 10px;
+    height: 12px;
+    border-radius: 100%;
+  }
+  .site > img {
+    width: 70%;
+    height: 85%;
+    filter: none;
+    display: inline-block;
+    margin-right: 1px;
+  }
+  .order > a {
+    display: none;
+  }
+  .order {
+    width: 12px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    right: 0px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: var(--fc-color-secondary);
+  }
+  .order > img {
+    display: inline-block;
+    width: 70%;
+    height: 85%;
+    margin-right: 240%;
+  }
+  /*OPCIONES*/
+  .options {
+    background-color: var(--fz-color-primary);
+    top: 120px;
+    width: 100%;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    z-index: 2;
+  }
+  .options li {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+    top: 10%;
+    height: 60px;
+    font-size: 50%;
+  }
+  /*DESPLIEGUE MENU OPCIONES*/
+  .simbolo > img {
+    display: block;
+    width: 15px;
+    position: relative;
+    top: 54px;
+    right: 200%;
+  }
+  .links > .simbolo {
+    position: absolute;
+    right: 75%;
+  }
+  /*LOGO*/
+  #menu a > img {
+    min-width: 280%;
+    min-height: 103%;
+  }
+  #menu > a {
+    position: relative;
+    margin-left: 42%;
+  }
+  /*DESPLEGUE MENU RESERVA */
+  .direction {
+    display: none;
+    background-color: var(--fc-color-secondary);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    width: 100svw;
+  }
+  .booking:hover > .direction {
+    display: block;
+  }
+  .place {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+  }
+  .input,
+  .search {
+    width: 200px;
+  }
+
+  /*SELECTOR DESPLEGUE*/
+  .simbolo:hover ~ .options {
+    display: block;
+  }
+  /*BOTONES*/
+  .place > img {
+    width: 5%;
+    position: absolute;
+    display: inline-block;
+    margin-left: 125%;
+    margin-bottom: 190px;
+  }
+}
