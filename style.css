@@ -292,9 +292,10 @@ MAIN
 }
 .special > img {
   position: relative;
-  width: 100%;
-  height: 110%;
-  bottom: 40px;
+  object-fit: cover;
+  /* width: 100%; */
+  height: 100%;
+  bottom: 1px;
   overflow: hidden;
   filter: contrast(95%);
 }
@@ -592,7 +593,8 @@ FOOTER
   align-items: center;
   position: relative;
   height: 300px;
-  padding: 1%;
+  padding-left: 1%;
+  gap: 1%;
   width: 50%;
   font-size: 130%;
 }
@@ -713,6 +715,14 @@ FOOTER
     font-weight: 800;
     font-size: 85%;
   }
+  main .elections,
+  .entries,
+  #plates,
+  .more,
+  .extra,
+  .app {
+    padding: 1%;
+  }
 }
 @media (max-width: 1599px) and (min-width: 1326px) {
   /*RESTAURANTES*/
@@ -807,7 +817,7 @@ FOOTER
   /*IMAGENES INTRO*/
   .special {
     position: absolute;
-    left: 750px;
+    left: 770px;
     max-width: 50%;
   }
 }
@@ -847,8 +857,9 @@ FOOTER
 
   .cities {
     height: 300px;
-    padding: 1%;
-    width: 50%;
+    padding: 5%;
+    width: 60%;
+
     font-size: 110%;
   }
   .cities > ul a {
@@ -942,10 +953,9 @@ FOOTER
   .special {
     position: absolute;
     left: 520px;
-    min-width: 50%;
+    min-width: 10%;
   }
-  /*RESERVA MESA Y PEDIDO ONLINE*/
-  .site {
+  SERVA MESA Y PEDIDO ONLINE*/ .site {
     width: 150px;
     position: relative;
     right: 20%;
@@ -1132,7 +1142,7 @@ FOOTER
   /*IMAGENES INTRO*/
   .special {
     position: absolute;
-    left: 450px;
+    left: 400px;
     width: 55%;
     height: 400px;
     top: 275px;
@@ -1351,10 +1361,10 @@ FOOTER
   .special {
     display: block;
     position: absolute;
-    left: 30%;
-    width: 40%;
+    left: 35%;
+    min-width: 100%;
     height: 180px;
-    top: 375px;
+    top: 325px;
   }
 
   /*RESERVA MESA Y PEDIDO ONLINE*/
@@ -1536,8 +1546,8 @@ FOOTER
 
   .cities {
     height: 300px;
-    padding: 1%;
-    width: 80%;
+    padding: 3%;
+    width: 90%;
     font-size: 120%;
   }
   .cities > ul a {
@@ -1654,10 +1664,19 @@ FOOTER
     display: block;
     position: absolute;
     left: 15%;
-    max-width: 70%;
+    max-width: 20%;
     height: 320px;
-    top: 120px;
+    top: 100px;
     filter: opacity(90%);
+  }
+  .special > img {
+    position: relative;
+    object-fit: cover;
+    min-width: 350%;
+    max-width: 350%;
+    height: 100%;
+    bottom: 1px;
+    filter: contrast(95%);
   }
 
   /*RESERVA MESA Y PEDIDO ONLINE*/
@@ -1784,6 +1803,14 @@ FOOTER
     display: inline-block;
     margin-right: 51%;
   }
+  main .elections,
+  .entries,
+  #plates,
+  .more,
+  .extra,
+  .app {
+    padding: 1%;
+  }
 }
 @media (max-width: 499px) and (min-width: 380px) {
   .more > button {
@@ -1818,14 +1845,14 @@ FOOTER
 
   .cities {
     height: 300px;
-    padding: 1%;
-    width: 80%;
+    padding: 3%;
+    width: 90%;
     font-size: 160%;
   }
   .cities > ul a {
     font-weight: 800;
     font-size: 40%;
-    gap: 30px;
+    gap: 5px;
   }
   /*REDES SOCIALES*/
   .pdf {
@@ -1969,10 +1996,19 @@ FOOTER
     display: block;
     position: absolute;
     left: 0%;
-    max-width: 100%;
+    max-width: 20%;
     height: 320px;
     top: 110px;
     filter: opacity(90%);
+  }
+  .special > img {
+    position: relative;
+    object-fit: contain;
+    max-width: 500%;
+    min-height: 20%;
+    max-height: 120%;
+    bottom: 1px;
+    filter: contrast(95%);
   }
 
   /*RESERVA MESA Y PEDIDO ONLINE*/
@@ -2103,8 +2139,20 @@ FOOTER
     margin-left: 91%;
     margin-bottom: 190px;
   }
+  main .elections,
+  .entries,
+  #plates,
+  .more,
+  .extra,
+  .app {
+    padding: 2%;
+  }
 }
 @media (max-width: 379px) and (min-width: 215px) {
+  .follow > .pdf,
+  .rrss {
+    padding: 2%;
+  }
   .more > button {
     width: 35%;
   }
@@ -2151,24 +2199,30 @@ FOOTER
   /*RESTAURANTES*/
   .localitations {
     top: 3050px;
-    height: 500px;
+    height: 300px;
     width: 100%;
     right: 0;
   }
   .localitations > h3 {
     gap: 10px;
+    font-size: 90%;
+    bottom: 50px;
   }
 
   .cities {
-    height: 300px;
-    padding: 1%;
-    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    justify-content: center;
+    align-content: center;
+    height: 100px;
+    padding: 5%;
+    width: 100%;
     font-size: 100%;
   }
   .cities > ul a {
     font-weight: 800;
     font-size: 20%;
-    gap: 30px;
+    gap: 70px;
   }
   /*REDES SOCIALES*/
   .pdf {
@@ -2194,6 +2248,7 @@ FOOTER
   .follow {
     top: 3050px;
   }
+
   /*PLATOS*/
   #plates {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -2293,12 +2348,22 @@ FOOTER
   /*IMAGENES INTRO*/
   .special {
     display: block;
-    position: absolute;
+    object-fit: contain;
     left: 0%;
+    width: 10%;
     max-width: 100%;
-    height: 270px;
-    top: 130px;
+    height: 250px;
+    top: 150px;
     filter: opacity(90%);
+  }
+  .special > img {
+    position: relative;
+    object-fit: contain;
+    max-width: 1000%;
+    min-height: 20%;
+    max-height: 120%;
+    bottom: 1px;
+    filter: contrast(95%);
   }
   /*RESERVA MESA Y PEDIDO ONLINE*/
   .purchase {
@@ -2427,6 +2492,14 @@ FOOTER
     display: none;
     margin-left: 100%;
     margin-bottom: 190px;
+  }
+  main .elections,
+  .entries,
+  #plates,
+  .more,
+  .extra,
+  .app {
+    padding: 3%;
   }
 }
 @media (max-width: 214px) and (min-width: 150px) {
