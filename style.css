@@ -1164,7 +1164,7 @@ FOOTER
   .special {
     position: absolute;
     left: 400px;
-    min-width: 60%;
+    /* min-width: 60%; */
     max-width: 100%;
   }
   .special > img {
@@ -1639,7 +1639,7 @@ FOOTER
   /*OPCIONES MENU*/
   .elections {
     min-height: 54px;
-    min-width: 100%;
+    /* min-width: 100%; */
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
@@ -1956,8 +1956,8 @@ FOOTER
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    /* padding-right: 30px; */
     width: 90%;
     font-size: 80%;
     font-weight: 600;
@@ -1969,7 +1969,7 @@ FOOTER
   /*OPCIONES MENU*/
   .elections {
     min-height: 54px;
-    min-width: 100%;
+    /* min-width: 100%; */
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
@@ -2239,8 +2239,8 @@ FOOTER
     justify-content: center;
     align-content: center;
     height: 100px;
-    padding: 5%;
-    width: 100%;
+    padding: 6%;
+    /* width: 100%; */
     font-size: 100%;
   }
   .cities > ul a {
@@ -2306,8 +2306,8 @@ FOOTER
     justify-content: center;
     align-items: center;
     margin-top: 100px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    /* padding-right: 30px; */
     width: 90%;
     font-size: 70%;
     font-weight: 600;
@@ -2323,7 +2323,7 @@ FOOTER
   /*OPCIONES MENU*/
   .elections {
     min-height: 54px;
-    min-width: 100%;
+    /* min-width: 100%; */
     display: flex !important;
     flex-direction: column;
     flex-wrap: wrap;
