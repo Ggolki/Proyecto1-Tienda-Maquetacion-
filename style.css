@@ -274,7 +274,7 @@ MAIN
   position: absolute;
   margin-top: 400px;
   margin-left: 17.5%;
-  width: 10%;
+  /* width: 10%; */
   height: 30px;
   font-family: 'Archivo-Black';
   color: var(--fz-color-primary);
@@ -634,6 +634,16 @@ FOOTER
 /*MEDIAS QUERIES*/
 
 @media (max-width: 1700px) and (min-width: 1600px) {
+  .special {
+    position: absolute;
+    left: 1000px;
+    min-width: 30%;
+    max-width: 40%;
+  }
+  .special > img {
+    object-fit: contain;
+    width: 90%;
+  }
   /*TERMINOS Y CONDICIONES */
 
   .terms {
@@ -817,8 +827,13 @@ FOOTER
   /*IMAGENES INTRO*/
   .special {
     position: absolute;
-    left: 770px;
-    max-width: 50%;
+    left: 800px;
+    min-width: 40%;
+    /* max-width: 50%; */
+  }
+  .special > img {
+    object-fit: contain;
+    width: 90%;
   }
 }
 @media (max-width: 1325px) and (min-width: 1050px) {
@@ -952,10 +967,16 @@ FOOTER
   /*IMAGENES INTRO*/
   .special {
     position: absolute;
-    left: 520px;
-    min-width: 10%;
+    left: 600px;
+    min-width: 30%;
+    max-width: 40%;
   }
-  SERVA MESA Y PEDIDO ONLINE*/ .site {
+  .special > img {
+    object-fit: contain;
+    width: 100%;
+  }
+  /*RESERVA MESA Y PEDIDO ONLINE*/
+  .site {
     width: 150px;
     position: relative;
     right: 20%;
@@ -1143,9 +1164,12 @@ FOOTER
   .special {
     position: absolute;
     left: 400px;
-    width: 55%;
-    height: 400px;
-    top: 275px;
+    min-width: 60%;
+    max-width: 100%;
+  }
+  .special > img {
+    object-fit: contain;
+    width: 90%;
   }
 
   /*RESERVA MESA Y PEDIDO ONLINE*/
